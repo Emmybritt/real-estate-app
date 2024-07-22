@@ -3,53 +3,55 @@
 @tailwind utilities;
 
 @font-face {
-	font-family: 'Cabinet Grotesk';
-	src: url('/fonts/cabinet-grotesk-webfont/CabinetGrotesk-Regular.woff')
-			format('woff2'),
-		url('/fonts/cabinet-grotesk-webfont/CabinetGrotesk-Regular.woff')
-			format('woff');
-	font-weight: normal;
-	font-style: normal;
+  font-family: "Cabinet Grotesk";
+  src:
+    url("/fonts/cabinet-grotesk-webfont/CabinetGrotesk-Regular.woff")
+      format("woff2"),
+    url("/fonts/cabinet-grotesk-webfont/CabinetGrotesk-Regular.woff")
+      format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-	font-family: 'Cabinet Grotesk';
-	src: url('/fonts/cabinet-grotesk-webfont/CabinetGrotesk-Bold.woff')
-			format('woff2'),
-		url('/fonts/cabinet-grotesk-webfont/CabinetGrotesk-Bold.woff')
-			format('woff');
-	font-weight: bold;
-	font-style: normal;
+  font-family: "Cabinet Grotesk";
+  src:
+    url("/fonts/cabinet-grotesk-webfont/CabinetGrotesk-Bold.woff")
+      format("woff2"),
+    url("/fonts/cabinet-grotesk-webfont/CabinetGrotesk-Bold.woff")
+      format("woff");
+  font-weight: bold;
+  font-style: normal;
 }
 
 @layer utilities {
-	.text-balance {
-		text-wrap: balance;
-	}
+  .text-balance {
+    text-wrap: balance;
+  }
 }
 
 .reviews-background-image {
-	background-image: url('/images/reviewBackground.png');
-	background-size: cover;
-	background-position: center;
+  background-image: url("/images/reviewBackground.png");
+  background-size: cover;
+  background-position: center;
 }
 
 .ellipsis {
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	max-width: 100%; /* Adjust the width as necessary */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%; /* Adjust the width as necessary */
 }
 body {
-	@apply font-cabinet;
+  @apply font-cabinet;
 }
 
 /* Add this to your CSS file */
 .loader {
-	opacity: 0;
-	transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .loader.visible {
-	opacity: 1;
+  opacity: 1;
 }

@@ -1,24 +1,24 @@
-import { Image } from 'antd';
-import React from 'react';
+import { Image } from "antd";
+import React from "react";
 
 interface PropertyDetailsBannerProp {
-	image: string;
+  image: string;
 }
 
 const PropertyDetailsBanner: React.FC<PropertyDetailsBannerProp> = ({
-	image,
+  image,
 }) => {
-	return (
-		<>
-			<Image
-				src={image}
-				alt='property-banner'
-				preview={false}
-				height={571}
-				style={{ width: '2000px' }}
-			/>
-		</>
-	);
+  return (
+    <>
+      <Image
+        src={image}
+        alt="property-banner"
+        preview={false}
+        height={571}
+        style={{ width: "2000px" }}
+      />
+    </>
+  );
 };
 
 export default PropertyDetailsBanner;

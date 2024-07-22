@@ -1,36 +1,36 @@
-import { RefObject, useEffect } from 'react';
+import { RefObject, useEffect } from "react";
 
 interface Props {
-	containerRef: RefObject<HTMLElement>;
-	onView: () => void;
-	intersectionOptions?: {
-		root?: Element | null;
-		rootMargin: string;
-		threshold: number;
-	};
+  containerRef: RefObject<HTMLElement>;
+  onView: () => void;
+  intersectionOptions?: {
+    root?: Element | null;
+    rootMargin: string;
+    threshold: number;
+  };
 }
 
 const defaultOptions = {
-	rootMargin: '0px',
-	threshold: 1,
-	root: null,
+  rootMargin: "0px",
+  threshold: 1,
+  root: null,
 };
 
 export const useIntersectionObserver = (
-	{ containerRef, intersectionOptions = defaultOptions, onView }: Props,
-	dependencies: any[],
+  { containerRef, intersectionOptions = defaultOptions, onView }: Props,
+  dependencies: any[],
 ) => {
-	useEffect(() => {
-		if (containerRef?.current) {
-			const observer = new IntersectionObserver(([entry]) => {
-				if (entry?.isIntersecting) {
-					onView();
-					observer.disconnect();
-				}
-			}, intersectionOptions);
+  useEffect(() => {
+    if (containerRef?.current) {
+      const observer = new IntersectionObserver(([entry]) => {
+        if (entry?.isIntersecting) {
+          onView();
+          observer.disconnect();
+        }
+      }, intersectionOptions);
 
-			observer.observe(containerRef.current);
-			return () => observer?.disconnect();
-		}
-	}, [...dependencies, containerRef?.current]);
+      observer.observe(containerRef.current);
+      return () => observer?.disconnect();
+    }
+  }, [...dependencies, containerRef?.current]);
 };

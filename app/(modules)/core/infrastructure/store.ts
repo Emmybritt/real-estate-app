@@ -1,17 +1,17 @@
-import { configureStore } from '@reduxjs/toolkit';
-import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
-import { PropertiesApiSlice } from './api/propertiesApiSlice';
-import userSlice from './slice/userSlice';
+import { configureStore } from "@reduxjs/toolkit";
+import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
+import { PropertiesApiSlice } from "./api/propertiesApiSlice";
+import userSlice from "./slice/userSlice";
 
 export const store = configureStore({
-	reducer: {
-		userSlice: userSlice,
-		[PropertiesApiSlice.reducerPath]: PropertiesApiSlice.reducer,
-	},
-	middleware: (getDefaultMiddleware) =>
-		getDefaultMiddleware({
-			serializableCheck: false,
-		}).concat(PropertiesApiSlice.middleware),
+  reducer: {
+    userSlice: userSlice,
+    [PropertiesApiSlice.reducerPath]: PropertiesApiSlice.reducer,
+  },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }).concat(PropertiesApiSlice.middleware),
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
