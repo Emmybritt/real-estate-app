@@ -1,4 +1,3 @@
-// components/withProtectedRoute.tsx
 import { useAppSelector } from '@/app/(modules)/core/infrastructure/store';
 import { useRouter } from 'next/navigation';
 import { useEffect, ReactNode, ComponentType } from 'react';
