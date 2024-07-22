@@ -11,7 +11,7 @@ const Profile = () => {
     <div className="px-[2rem] sm:px-[6rem] py-[5.6rem] md:max-w-[70%]">
       <h1 className="text-[32px] font-bold">Personal Information</h1>
       <div>
-        <Image src="/images/profile.png" />
+        <Image src="/images/profile.png" alt="profile" />
         <div className="grid xs:grid-cols-2 gap-[1rem]">
           <CustomInput label="First name" value={user?.firstName} readOnly />
           <CustomInput label="Last name" value={user?.lastName} readOnly />

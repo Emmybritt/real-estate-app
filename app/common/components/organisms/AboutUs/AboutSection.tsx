@@ -34,12 +34,14 @@ const AboutSection = () => {
             activeClass
             className="mt-[2rem] w-[240px]"
             label="Find Property"
-            rightIcon={<Image preview={false} src="/images/arrowright.png" />}
+            rightIcon={
+              <Image alt="arrow" preview={false} src="/images/arrowright.png" />
+            }
           />
         </Link>
       </div>
       <div>
-        <Image preview={false} src="/images/banner.png" />
+        <Image alt="arrow" preview={false} src="/images/banner.png" />
       </div>
     </div>
   );

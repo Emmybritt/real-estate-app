@@ -33,7 +33,7 @@ const Header = () => {
 		py-[1rem]"
     >
       <div>
-        <Image src="/images/logo.png" preview={false} />
+        <Image src="/images/logo.png" preview={false} alt="logo" />
       </div>
       <div className="space-x-[2rem] hidden md:flex">
         {headerLink.map((link, _index: number) => (
@@ -58,14 +58,14 @@ const Header = () => {
             onMouseLeave={() => setIsOpen(false)}
           >
             <div className="flex items-center space-x-2 cursor-pointer">
-              <Image src="/images/profile.png" />
+              <Image src="/images/profile.png" alt="profile" />
               <div>
                 <h1 className="text-[14px] text-[#1B1D1C]">
                   {user.firstName} {user.lastName}
                 </h1>
                 <h1 className="text-[10px] text-[#5E5A5A]">{user.email}</h1>
               </div>
-              <Image src="/images/arrow-down.png" preview={false} />
+              <Image src="/images/arrow-down.png" preview={false} alt="arrow" />
             </div>
             {isOpen && (
               <div className="absolute divide-x right-0 w-[15rem] bg-white border border-gray-200 shadow-lg rounded-md z-10">

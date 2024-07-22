@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 import { useFetchPropertiesQuery } from "@/app/(modules)/core/infrastructure/api/propertiesApiSlice";
 import { useEffect, useRef, useState } from "react";

@@ -32,6 +32,7 @@ const ContactUs = () => {
           className="hidden lg:inline"
           src="/images/contactUsBanner.png"
           preview={false}
+          alt="contact"
         />
       </div>
     </div>

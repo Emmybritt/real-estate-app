@@ -18,22 +18,43 @@ const OurTeam = () => {
       <div className="grid grid-cols-2 sm:grid-cols-3 justify-center items-center gap-5">
         {ourTeam.map((team, _index) => (
           <div className="relative group" key={_index}>
-            <Image className="w-[100%]" src={team.image} preview={false} />
+            <Image
+              alt="image"
+              className="w-[100%]"
+              src={team.image}
+              preview={false}
+            />
             <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <h2 className="text-white text-lg font-bold">{team.name}</h2>
               <p className="text-white">{team.position}</p>
               <div className="flex items-center gap-4 mt-2 justify-between">
                 <a href={team.socials.facebook}>
-                  <Image src="/images/facebook.png" preview={false} />
+                  <Image
+                    alt="image"
+                    src="/images/facebook.png"
+                    preview={false}
+                  />
                 </a>
                 <a href={team.socials.instagram}>
-                  <Image src="/images/instagram.png" preview={false} />
+                  <Image
+                    alt="image"
+                    src="/images/instagram.png"
+                    preview={false}
+                  />
                 </a>
                 <a href={team.socials.linkedin}>
-                  <Image src="/images/linkedin.png" preview={false} />
+                  <Image
+                    alt="image"
+                    src="/images/linkedin.png"
+                    preview={false}
+                  />
                 </a>
                 <a href={team.socials.twitter}>
-                  <Image src="/images/twitter.png" preview={false} />
+                  <Image
+                    alt="image"
+                    src="/images/twitter.png"
+                    preview={false}
+                  />
                 </a>
               </div>
             </div>

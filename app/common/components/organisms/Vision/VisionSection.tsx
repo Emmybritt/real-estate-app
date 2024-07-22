@@ -32,6 +32,7 @@ const VisionSection = () => {
           className="w-[100%] lg:w-[630px]"
           src="/images/vision.png"
           preview={false}
+          alt="vision"
         />
       </div>
     </div>

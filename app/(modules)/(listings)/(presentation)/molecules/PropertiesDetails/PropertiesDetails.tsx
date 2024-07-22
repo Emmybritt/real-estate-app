@@ -52,7 +52,7 @@ const PropertiesDetails: React.FC<PropertiesDetailsProps> = ({
           Posted by: {postedBy}
         </div>
         <div className="flex items-center space-x-2 mt-3">
-          <Image src="/images/locationIcon.png" />
+          <Image src="/images/locationIcon.png" alt="location icon" />
           <p className="text-[24px]">{address}</p>
         </div>
       </div>

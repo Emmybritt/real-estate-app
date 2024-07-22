@@ -10,7 +10,7 @@ const Login = () => {
   const { handleChange, loginUser, user, error, loading } = useAuth();
   return (
     <div className="w-[632px] h-[713px] mx-auto my-auto font-cabinet shadow-md flex flex-col items-center justify-center">
-      <Image src="/images/logo.png" preview={false} />
+      <Image src="/images/logo.png" preview={false} alt="logo" />
       <h3 className="text-[32px] font-bold leading-[44.8px] mt-2">Sign in</h3>
       <div className="space-y-[1rem]">
         <CustomInput
@@ -38,7 +38,7 @@ const Login = () => {
         />
       </div>
       <p className="mt-2">
-        Don't have an account{" "}
+        Dont have an account{" "}
         <Link href="/register" className="text-[#1818A6]">
           Register
         </Link>
