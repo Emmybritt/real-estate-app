@@ -183,3 +183,15 @@ export const contactUsOfficInfo = [
     },
   },
 ];
+
+export const propertTypeArr = [
+  { label: "Apartments", value: "apartment" },
+  { label: "Town Home", value: "condo_townhome" },
+  { label: "Town Row Home", value: "condo_townhome_rowhome_coop" },
+  { label: "Triplex Duplex", value: "duplex_triplex" },
+  { label: "Farm", value: "farm" },
+  { label: "Land", value: "land" },
+  { label: "Mobile", value: "mobile" },
+  { label: "Multi Family", value: "multi_family" },
+  { label: "Single Family", value: "single_family" },
+];

@@ -1,19 +1,25 @@
-"use client";
-import React from "react";
-import FilterInputs from "../../molecules/Filters/FilterInputs";
-import { useProperties } from "../../../infrastructure/hooks/useProperties";
-import PropertyCard from "@/app/common/components/molecules/Card/PropertyCard";
+"use server";
 import PropertyCardSkeleton from "@/app/common/components/molecules/loader/PropertyCardSkeleton";
+import { Suspense } from "react";
+import { List } from "../../molecules/List";
 
-const Propterties = () => {
-  const { properties, isLoading, error, loader, isFetching } = useProperties();
+interface PropertiesProps {
+  searchParams: {
+    offset: number;
+    searchTerm: string;
+    minPrice: string;
+    maxPrice: string;
+    location: string;
+    propertyType: string;
+  };
+}
 
-  if (error) return <div>Error loading properties</div>;
+const Propterties = async ({ searchParams }: PropertiesProps) => {
   return (
-    <div>
-      {/* <FilterInputs /> */}
-      <div
-        className="
+    <Suspense
+      fallback={
+        <div
+          className="
 				grid 
 				grid-cols-1 
 				md:grid-cols-2 
@@ -23,27 +29,22 @@ const Propterties = () => {
 				md:px-[3rem]
 				lg:px-[4rem] 
 				gap-[1rem]"
-      >
-        {properties.map((property, _index) => (
-          <PropertyCard
-            property_id={property.property_id}
-            status={property.status}
-            key={_index}
-            address={property.location.address.line}
-            amount={property.last_sold_price}
-            name={property.branding[0].name}
-            advertisers={property.advertisers[0].name}
-            rating={5}
-            image={property.primary_photo.href}
-          />
-        ))}
-        {(isLoading || isFetching) &&
-          Array.from({ length: 8 }).map((_, index) => (
+        >
+          {Array.from({ length: 8 }).map((_, index) => (
             <PropertyCardSkeleton key={index} />
           ))}
-      </div>
-      <div ref={loader} className="h-10 w-full" />
-    </div>
+        </div>
+      }
+    >
+      <List
+        location={searchParams.location}
+        offset={searchParams.offset}
+        maxPrice={searchParams.maxPrice}
+        minPrice={searchParams.minPrice}
+        searchTerms={searchParams.searchTerm}
+        propertyType={searchParams.propertyType}
+      />
+    </Suspense>
   );
 };
 

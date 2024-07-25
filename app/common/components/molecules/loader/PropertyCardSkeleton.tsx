@@ -1,4 +1,4 @@
-// components/PropertyCardSkeleton.tsx
+"use client";
 import { Card, Skeleton } from "antd";
 import React from "react";
 

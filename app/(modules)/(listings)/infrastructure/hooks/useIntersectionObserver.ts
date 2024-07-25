@@ -6,8 +6,8 @@ interface Props {
   onView: () => void;
   intersectionOptions?: {
     root?: Element | null;
-    rootMargin: string;
-    threshold: number;
+    rootMargin?: string;
+    threshold?: number;
   };
 }
 
@@ -26,12 +26,14 @@ export const useIntersectionObserver = (
       const observer = new IntersectionObserver(([entry]) => {
         if (entry?.isIntersecting) {
           onView();
-          observer.disconnect();
         }
       }, intersectionOptions);
 
       observer.observe(containerRef.current);
-      return () => observer?.disconnect();
+
+      return () => {
+        observer.disconnect();
+      };
     }
-  }, [...dependencies, containerRef?.current]);
+  }, [containerRef, ...dependencies]);
 };

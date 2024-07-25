@@ -1,13 +1,13 @@
 "use client";
+import { useAuth } from "@/app/(modules)/(authentication)/infrastructure/hooks/useAuth";
 import { useAppSelector } from "@/app/(modules)/core/infrastructure/store";
 import { headerLink, profileLink } from "@/app/common/constants/data";
+import { MenuOutlined } from "@ant-design/icons";
 import { Image } from "antd";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Button } from "../../atoms/Button/Button";
 import { useState } from "react";
-import { useAuth } from "@/app/(modules)/(authentication)/infrastructure/hooks/useAuth";
-import { MenuOutlined } from "@ant-design/icons";
+import { Button } from "../../atoms/Button/Button";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,9 +32,9 @@ const Header = () => {
 		lg:px-[6rem] 
 		py-[1rem]"
     >
-      <div>
+      <Link href="/">
         <Image src="/images/logo.png" preview={false} alt="logo" />
-      </div>
+      </Link>
       <div className="space-x-[2rem] hidden md:flex">
         {headerLink.map((link, _index: number) => (
           <Link
