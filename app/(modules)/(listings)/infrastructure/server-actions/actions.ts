@@ -47,7 +47,7 @@ export const fetchProperties = async ({
           "x-rapidapi-host": "realty-in-us.p.rapidapi.com",
           "x-rapidapi-key": apiKey,
         },
-      }
+      },
     );
     return response.data.data.home_search.results;
   } catch (error: any) {
