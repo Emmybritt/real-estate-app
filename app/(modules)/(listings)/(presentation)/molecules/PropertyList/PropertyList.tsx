@@ -39,7 +39,7 @@ const PropertyList: React.FC<any> = ({ properties }) => {
           status={property.status}
           key={_index}
           address={property.location.address.line}
-          amount={property.last_sold_price}
+          amount={property.list_price}
           name={property.branding[0].name}
           advertisers={property.advertisers[0].name}
           rating={5}
