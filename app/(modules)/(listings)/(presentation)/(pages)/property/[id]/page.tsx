@@ -5,10 +5,16 @@ import PropertyDetailsBanner from "../../../atoms/PropertyDetailsBanner/Property
 import PropertiesDetails from "../../../molecules/PropertiesDetails/PropertiesDetails";
 import PropertiesImage from "../../../atoms/PropertiesImage/PropertiesImage";
 import { fetchPropertyDetails } from "@/app/(modules)/(listings)/infrastructure/server-actions/actions";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Property details",
+  description: "View details about your properties",
+};
 
 interface PropertiesProps {
-  searchParams: any;
-  params: any;
+  searchParams: { name: string };
+  params: { id: string };
 }
 
 const PropertyDetails = async ({ params, searchParams }: PropertiesProps) => {
