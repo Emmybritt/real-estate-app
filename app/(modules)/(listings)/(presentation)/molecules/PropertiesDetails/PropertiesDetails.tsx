@@ -2,6 +2,12 @@ import { Button } from "@/app/common/components/atoms/Button/Button";
 import { Image } from "antd";
 import React from "react";
 import { formatNumber } from "../../../infrastructure/helper";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Property details",
+  description: "View details about your properties",
+};
 
 interface PropertiesDetailsProps {
   name: string;

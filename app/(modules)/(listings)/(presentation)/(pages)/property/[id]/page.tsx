@@ -1,16 +1,8 @@
 "use server";
-import { useParams, useSearchParams } from "next/navigation";
-import React from "react";
+import { fetchPropertyDetails } from "@/app/(modules)/(listings)/infrastructure/server-actions/actions";
+import PropertiesImage from "../../../atoms/PropertiesImage/PropertiesImage";
 import PropertyDetailsBanner from "../../../atoms/PropertyDetailsBanner/PropertyDetailsBanner";
 import PropertiesDetails from "../../../molecules/PropertiesDetails/PropertiesDetails";
-import PropertiesImage from "../../../atoms/PropertiesImage/PropertiesImage";
-import { fetchPropertyDetails } from "@/app/(modules)/(listings)/infrastructure/server-actions/actions";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Property details",
-  description: "View details about your properties",
-};
 
 interface PropertiesProps {
   searchParams: { name: string };
