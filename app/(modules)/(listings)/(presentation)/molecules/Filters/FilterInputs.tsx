@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 import { CustomInput } from "@/app/common/components/atoms/Input/Input";
 import CustomSelect from "@/app/common/components/atoms/Select/CustomSelect";
@@ -17,13 +16,14 @@ const FilterInputs = () => {
   const initialLocation = searchParams.get("location") || "";
   const initialMinPrice = searchParams.get("minPrice") || "";
   const initialMaxPrice = searchParams.get("maxPrice") || "";
-  const initialPropertyType = searchParams.get("propertyType") || "";
+  const initialPropertyTypes = searchParams.getAll("propertyType") || []; // Handle multiple types
 
   const [searchTerm, setSearchTerm] = useState(initialSearchTerm);
   const [location, setLocation] = useState(initialLocation);
   const [minPrice, setMinPrice] = useState(initialMinPrice);
   const [maxPrice, setMaxPrice] = useState(initialMaxPrice);
-  const [propertyType, setPropertyType] = useState(initialPropertyType);
+  const [propertyTypes, setPropertyTypes] =
+    useState<string[]>(initialPropertyTypes);
   const debouncedSearchTerm = useDebouncedSearch(searchTerm, 300);
 
   useEffect(() => {
@@ -58,8 +58,8 @@ const FilterInputs = () => {
       params.delete("maxPrice");
     }
 
-    if (propertyType) {
-      params.set("propertyType", propertyType);
+    if (propertyTypes.length > 0) {
+      propertyTypes.forEach((type) => params.append("propertyType", type)); // Append each property type
       shouldSetSearchAndFilter = true;
     } else {
       params.delete("propertyType");
@@ -74,7 +74,16 @@ const FilterInputs = () => {
     router.replace(`${pathname}?${params.toString()}`, {
       scroll: false,
     });
-  }, [debouncedSearchTerm, location, minPrice, maxPrice, propertyType]);
+  }, [
+    debouncedSearchTerm,
+    location,
+    minPrice,
+    maxPrice,
+    propertyTypes,
+    searchParams,
+    router,
+    pathname,
+  ]);
 
   return (
     <div className="grid grid-cols-2 px-[3em] md:px-[6rem] lg:px-[12rem] items-center gap-[1rem] mb-[3rem] mt-[2rem]">
@@ -92,8 +101,10 @@ const FilterInputs = () => {
       />
       <CustomSelect
         placeholder="Property Type"
+        mode="multiple"
         options={propertTypeArr}
-        onChange={setPropertyType}
+        onChange={(e) => setPropertyTypes(e)}
+        value={propertyTypes}
       />
       <div className="flex items-center">
         <CustomInput

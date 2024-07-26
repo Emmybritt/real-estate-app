@@ -10,7 +10,7 @@ interface PropertiesProps {
     minPrice: string;
     maxPrice: string;
     location: string;
-    propertyType: string;
+    propertyType: string[];
   };
 }
 

@@ -6,8 +6,9 @@ interface OptionsAttr {
   value: string;
 }
 export interface CustomSelectAttr {
-  onChange?: (value: string) => void;
+  onChange?: (value: any) => void;
   onSearch?: (value: string) => void;
+  mode?: "multiple" | "tags";
   filterOption?: (
     input: string,
     option?: { label: string; value: string },
@@ -16,6 +17,7 @@ export interface CustomSelectAttr {
   label?: string;
   error?: string;
   placeholder?: string;
+  value?: any;
 }
 
 const CustomSelect: React.FC<CustomSelectAttr> = ({
@@ -26,6 +28,8 @@ const CustomSelect: React.FC<CustomSelectAttr> = ({
   label,
   error,
   placeholder,
+  mode,
+  value,
 }) => {
   return (
     <div className="w-full">
@@ -41,6 +45,8 @@ const CustomSelect: React.FC<CustomSelectAttr> = ({
         onChange={onChange}
         onSearch={onSearch}
         style={{ height: 56 }}
+        value={value}
+        mode={mode}
         className="w-[100%] rounded-none text-lg"
         filterOption={filterOption}
         options={options}

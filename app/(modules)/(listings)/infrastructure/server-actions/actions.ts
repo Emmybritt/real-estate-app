@@ -12,7 +12,7 @@ export const fetchProperties = async ({
   limit = 20,
   maxPrice,
   minPrice,
-  propertyType,
+  propertyType, // This should be an array
   searchTerms,
   location,
 }: {
@@ -20,10 +20,11 @@ export const fetchProperties = async ({
   limit?: number;
   maxPrice: string;
   minPrice: string;
-  propertyType: string;
+  propertyType: string[]; // Update to array
   searchTerms: string;
   location: string;
 }): Promise<Record<any, any>> => {
+  console.log(propertyType);
   unstable_noStore(); // ensures dynamic site generation
   try {
     const response = await axios.post(
@@ -35,7 +36,7 @@ export const fetchProperties = async ({
         address: location,
         postal_code: "90004",
         list_price: { max: maxPrice, min: minPrice },
-        type: [propertyType],
+        type: propertyType, // Pass array of types
         status: ["for_sale", "ready_to_build"],
         sort: {
           direction: "desc",

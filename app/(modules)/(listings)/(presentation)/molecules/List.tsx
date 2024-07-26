@@ -14,7 +14,7 @@ export const List = async ({
   offset: number;
   maxPrice: string;
   minPrice: string;
-  propertyType: string;
+  propertyType: string[];
   searchTerms: string;
   location: string;
 }) => {
@@ -26,8 +26,6 @@ export const List = async ({
     searchTerms,
     location,
   });
-
-  console.log(properties, "hehehhe");
 
   return (
     <div>
