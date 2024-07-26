@@ -24,7 +24,6 @@ export const fetchProperties = async ({
   searchTerms: string;
   location: string;
 }): Promise<Record<any, any>> => {
-  console.log(propertyType);
   unstable_noStore(); // ensures dynamic site generation
   try {
     const response = await axios.post(

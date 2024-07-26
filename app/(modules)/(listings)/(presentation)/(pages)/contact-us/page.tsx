@@ -33,6 +33,7 @@ const ContactUs = () => {
           src="/images/contactUsBanner.png"
           preview={false}
           alt="contact"
+          loading="lazy"
         />
       </div>
     </div>
