@@ -36,6 +36,7 @@ const PropertyCard: React.FC<PropertyCardProp> = ({
         src={image}
         alt={name}
         preview={false}
+        loading="lazy"
       />
       <div className="p-[1rem]">
         <div className="flex text-[12px] capitalize font-medium text-[#696969] items-center justify-between">

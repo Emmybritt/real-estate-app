@@ -8,6 +8,7 @@ const OurStoriesSection = () => {
         src="/images/ourStories.png"
         preview={false}
         className="order-last md:order-first"
+        loading="lazy"
         alt=""
       />
       <div className="order-first md:order-last">

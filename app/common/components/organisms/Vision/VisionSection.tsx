@@ -33,6 +33,7 @@ const VisionSection = () => {
           src="/images/vision.png"
           preview={false}
           alt="vision"
+          loading="lazy"
         />
       </div>
     </div>

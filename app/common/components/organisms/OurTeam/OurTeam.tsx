@@ -19,6 +19,7 @@ const OurTeam = () => {
         {ourTeam.map((team, _index) => (
           <div className="relative group" key={_index}>
             <Image
+              loading="lazy"
               alt="image"
               className="w-[100%]"
               src={team.image}

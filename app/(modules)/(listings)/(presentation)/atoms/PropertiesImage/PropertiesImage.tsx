@@ -20,6 +20,7 @@ const PropertiesImage: React.FC<PropertiesImageProp> = ({ photos }) => {
               src={photo.href}
               alt={`Property Image ${_index}`}
               className="w-full h-full object-cover"
+              loading="lazy"
             />
           </div>
         ))}

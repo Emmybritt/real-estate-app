@@ -16,6 +16,7 @@ const PropertyDetailsBanner: React.FC<PropertyDetailsBannerProp> = ({
         preview={false}
         height={571}
         style={{ width: "2000px" }}
+        loading="lazy"
       />
     </>
   );
