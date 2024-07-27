@@ -29,7 +29,6 @@ export const useAuth = () => {
           [name]: `${name} is required!!!`,
         };
       });
-      return;
     }
     setError((prev: any) => {
       return {
